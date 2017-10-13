@@ -1,5 +1,4 @@
 'use strict';
-
 const autoprefixer = require('autoprefixer');
 const path = require('path');
 const webpack = require('webpack');
@@ -161,11 +160,19 @@ module.exports = {
           {
             test: /\.css$/,
             use: [
-              require.resolve('style-loader'),
+                {
+                  loader: require.resolve('style-loader'),
+                  options: {
+                    sourceMap: true,
+                  }
+                },
+
               {
                 loader: require.resolve('css-loader'),
                 options: {
                   importLoaders: 1,
+                  modules: true,
+                  localIdentName: "[path]__[name]__[local]___[hash:base64:5]",
                 },
               },
               {

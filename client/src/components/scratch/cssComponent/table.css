@@ -1,0 +1,14 @@
+.table {
+    display: table;
+    border: 2px solid black;
+    height: 400px;
+    width: 400px;
+}
+
+.row {
+    display: table-row;
+}
+
+.cell {
+    display: table-cell;
+}
